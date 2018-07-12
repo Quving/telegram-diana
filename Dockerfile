@@ -1,9 +1,11 @@
 FROM python:3.6
 
+ENV KERAS_BACKEND tensorflow
+
 WORKDIR /workdir
 
 ADD . .
-RUN pip install -r requirements.txt
-RUN python downloader.py
+RUN pip3 install -r requirements.txt
+RUN python3 downloader.py
 
 CMD ["python", "run.py"]
