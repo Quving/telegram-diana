@@ -5,6 +5,8 @@ description: diana
 services:
   bot:
     image: pingu/telegram-diana:latest
+    affinity:
+      - node==grapefruit
     links:
       - system/lb
       - db
