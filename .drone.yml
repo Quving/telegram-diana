@@ -2,7 +2,7 @@ pipeline:
   publish:
     image: plugins/docker
     privileged: true
-    repo: pingu/diana
+    repo: pingu/telegram-diana
     tags: latest
     secrets: [ docker_username, docker_password ]
     # build_args: ["--no-cache"]

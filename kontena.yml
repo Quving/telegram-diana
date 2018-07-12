@@ -1,0 +1,15 @@
+---
+stack: vngu/diana
+version: '0.0.1'
+description: diana
+services:
+  bot:
+    image: pingu/telegram-diana:latest
+    links:
+      - system/lb
+      - db
+    instances: 1
+    secrets:
+      - secret: DIANA_BOT_TOKEN
+        name: DIANA_BOT_TOKEN
+        type: env
