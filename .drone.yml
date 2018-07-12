@@ -1,0 +1,18 @@
+pipeline:
+  publish:
+    image: plugins/docker
+    privileged: true
+    repo: pingu/diana
+    tags: latest
+    secrets: [ docker_username, docker_password ]
+    # build_args: ["--no-cache"]
+    when:
+      status: [ success ]
+      branch: [ master ]
+  deploy:
+    image: pingu/drone-plugin-kontena:latest
+    secrets: [ kontena_token, kontena_url, kontena_grid ]
+    kontena_stack: diana
+    when:
+      status: [ success ]
+      branch: [ master ]
