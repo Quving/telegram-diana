@@ -10,7 +10,7 @@ from diana_exceptions import BotTokenNotSetException
 from diana_user_commands import DianaUserCommands
 
 
-class Alfred:
+class Diana:
     def __init__(self):
         # Enable logging
         logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',

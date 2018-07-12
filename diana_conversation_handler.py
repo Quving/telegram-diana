@@ -99,7 +99,7 @@ class DianaConversationHandler:
             label = prediction["label"]
             prob = str(np.around(prediction["prob"] * 100, decimals=1))
             amazon = "\nhttps://www.amazon.com/s?url=search-alias&field-keywords={}"
-            answer = "*Klasse* : {} \n*Wahrscheinlichkeit*: {}".format(re.sub("_", "\_", label),
+            answer = "*Klasse* : {} \n*Wahrscheinlichkeit*: {}%".format(re.sub("_", "\_", label),
                                                                        prob)
             update.message.reply_markdown(answer)
             update.message.reply_text(amazon.format(label), reply_markup=DianaConversationHandler.markup)
