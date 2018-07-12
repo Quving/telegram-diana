@@ -9,7 +9,6 @@ services:
       - node==grapefruit
     links:
       - system/lb
-      - db
     instances: 1
     secrets:
       - secret: DIANA_BOT_TOKEN
