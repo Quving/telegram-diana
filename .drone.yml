@@ -12,6 +12,7 @@ pipeline:
     image: pingu/drone-plugin-kontena:latest
     secrets: [ kontena_token, kontena_url, kontena_grid ]
     kontena_stack: diana
+    kontena_file: kontena.yml
     when:
       status: [ success ]
       branch: [ master ]
